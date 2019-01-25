@@ -138,6 +138,8 @@ def fluor_fvfm(fdark, fmin, fmax, mask, filename, bins=256):
         plt.clf()
         analysis_images.append(['IMAGE', 'fvfm_hist', fig_name])
 
+        # Set masked pixels to nan
+        fvfm = np.where(fvfm == 0, np.nan, fvfm)
         # Pseudocolored Fv/Fm image
         plt.imshow(fvfm, vmin=0, vmax=1, cmap="viridis")
         plt.colorbar()
