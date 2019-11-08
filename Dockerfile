@@ -12,7 +12,10 @@ RUN conda install --quiet --yes -c conda-forge \
     "scipy<1.3" \
     "scikit-image<0.15" \
     plotnine \
-    "py-opencv<4,>=3.4" && \
+    "py-opencv<4,>=3.4" \
+    paramiko \
+    psycopg2 \
+    && \
     conda clean --all -f -y
 
 # Copy source files
