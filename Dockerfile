@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM continuumio/miniconda3
 MAINTAINER PlantCV <ddpsc.plantcv@gmail.com>
 
 USER root
@@ -25,3 +25,6 @@ COPY . /tmp
 RUN cd /tmp && python setup.py install
 
 USER $NB_UID
+
+RUN apt-get install -y procps
+
